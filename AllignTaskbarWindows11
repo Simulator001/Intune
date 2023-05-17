@@ -1,0 +1,22 @@
+#Author Milan van Wingerden 2023
+
+$KeyPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+$ValueName = "TaskbarAl"
+$ValueData = "0"
+
+if (Test-Path $KeyPath) {
+    try {
+        Get-ItemProperty -Path $KeyPath -Name $ValueName -ErrorAction Stop | Set-ItemProperty -Name $ValueName -Value $ValueData
+    }
+    catch [System.Management.Automation.ItemNotFoundException] {
+        New-Item -Path $KeyPath -Force
+        New-ItemProperty -Path $KeyPath -Name $ValueName -Value $ValueData -Force
+    }
+    catch {
+        New-ItemProperty -Path $KeyPath -Name $ValueName -Value $ValueData -Type dword -Force
+    }
+}
+else {
+    New-Item -Path $KeyPath -Force
+    New-ItemProperty -Path $KeyPath -Name $ValueName -Value $ValueData -Force
+}
