@@ -1,0 +1,6 @@
+#Author Milan van Wingerden 203 
+#This powershell command you can use to send an email with smtp account in this case I use Office 365 and force to use TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Send-MailMessage -From 'sender <name@domian.xx>' -To 'recipient <name@domian.xx>' -Subject 'relay' -Body "test" -SmtpServer smtp.office365.com -port 587 -useSSL -credential (get-credential)
+#Enter credentials from the SMTP account
+
