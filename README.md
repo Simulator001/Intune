@@ -1,1 +1,1 @@
-Some Powershell script I made for Intune
+Some Powershell scripts I made for Intune
