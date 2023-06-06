@@ -1,4 +1,8 @@
-#Author Milan van Wingerden 2023
+# Change wallpaper from image on website
+# Original file https://github.com/Simulator001/Intune/edit/main/ChangeWallPaper
+# Created by Milan van Wingerden
+
+
 $WallpaperPath = "FolderPath"
 # Download image to Folder
 $url = "Website"
