@@ -1,4 +1,6 @@
-#Author Milan van Wingerden 2023
+# Allign Taskbar to the Left
+# Original file https://github.com/Simulator001/Intune/edit/main/AllignTaskbarWindows11
+# Created by Milan van Wingerden
 
 $KeyPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 $ValueName = "TaskbarAl"
